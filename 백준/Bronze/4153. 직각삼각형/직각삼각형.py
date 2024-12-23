@@ -5,7 +5,7 @@ while(1):
         for i in r:
             a.append(i**2)
         m = max(a)
-        a.remove(max(a))
+        a.remove(m)
         if m == 0:
             break
         elif m == sum(a):
