@@ -1,10 +1,14 @@
 n = int(input())
-pbag = []
-for i in range(n+1):
-    for j in range(n+1):
-        if (5 * i) + (3 * j) == n:
-            pbag.append(i+j)
-if len(pbag) == 0:
-    print(-1)
+tmp = 0
+
+while n >= 0:
+    if n % 5 == 0:
+        tmp += (n//5)
+        print(tmp)
+        break
+    n -= 3
+    tmp += 1
+    
 else:
-    print(min(pbag))
+    print(-1)
+    
