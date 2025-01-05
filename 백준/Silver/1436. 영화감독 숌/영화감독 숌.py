@@ -1,5 +1,5 @@
 n = int(input())
-count = 0
+count = 665
 result = 0
 
 while 1:
