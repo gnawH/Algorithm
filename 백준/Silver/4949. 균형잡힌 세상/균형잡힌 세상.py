@@ -3,28 +3,37 @@ input = sys.stdin.readline
 
 while True:
     stc = input().rstrip()
-    if stc == '.':
-        break  # 종료 조건
-
     stack = []
-    is_balanced = True  # 괄호 균형 여부를 추적하는 플래그
-
+    check = 0
+    # 종료 조건
+    if stc == '.':
+        break
     for i in stc:
-        if i in "([":  
+        if i == '(':
+            stack.append(i)
+        elif i == '[':
             stack.append(i)
         elif i == ')':
-            if not stack or stack[-1] != '(':
-                is_balanced = False
+            if len(stack) == 0:
+                stack.append(i)
+                check = 1
                 break
-            stack.pop()
+            elif stack[-1] == '(':
+                stack.pop()
+            else:
+                check = 1
+                break
         elif i == ']':
-            if not stack or stack[-1] != '[':
-                is_balanced = False
+            if len(stack) == 0:
+                stack.append(i)
+                check = 1
                 break
-            stack.pop()
-
-    # 결과 출력
-    if is_balanced and not stack:
+            elif stack[-1] == '[':
+                stack.pop()
+            else:
+                check = 1
+                break
+    if check == 0 and len(stack) == 0:
         print('yes')
     else:
         print('no')
