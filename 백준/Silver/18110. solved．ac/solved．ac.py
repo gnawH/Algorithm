@@ -17,10 +17,7 @@ elif int(n * 0.15 + 0.5) != int(n * 0.15):
 
 score.sort()
 total = score[cnt:n-cnt]
-if len(total) == 0:
-    print(0)
-else:
-    if int(sum(total)/len(total) + 0.5) == int((sum(total)/len(total))):
-        print(int(sum(total)/len(total)))
-    elif int(sum(total)/len(total) + 0.5) != int((sum(total)/len(total))):
-        print(int(sum(total)/len(total) + + 0.5))
+if int(sum(total)/len(total) + 0.5) == int((sum(total)/len(total))):
+    print(int(sum(total)/len(total)))
+elif int(sum(total)/len(total) + 0.5) != int((sum(total)/len(total))):
+    print(int(sum(total)/len(total) + + 0.5))
