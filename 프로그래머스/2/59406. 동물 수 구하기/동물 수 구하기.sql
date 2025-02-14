@@ -1,0 +1,2 @@
+-- 코드를 입력하세요
+SELECT DISTINCT count(ANIMAL_ID) FROM ANIMAL_INS;
