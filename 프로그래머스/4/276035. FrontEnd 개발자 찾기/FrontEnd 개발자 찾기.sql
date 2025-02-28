@@ -1,0 +1,19 @@
+-- 코드를 작성해주세요
+SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+    FROM SKILLCODES A
+    JOIN DEVELOPERS B
+        WHERE (B.SKILL_CODE & A.CODE) IN
+            (SELECT CODE
+                FROM SKILLCODES
+                    WHERE CATEGORY = 'Front End')
+            GROUP BY ID, EMAIL, FIRST_NAME, LAST_NAME
+                ORDER BY ID;
+
+# SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
+#     FROM DEVELOPERS A
+#     LEFT JOIN SKILLCODES B ON (A.SKILL_CODE & B.CODE) IN 
+#         (SELECT CODE
+#             FROM SKILLCODES
+#                 WHERE CATEGORY = 'Front End')
+#         WHERE CODE IS NOT NULL
+#             ORDER BY ID;
