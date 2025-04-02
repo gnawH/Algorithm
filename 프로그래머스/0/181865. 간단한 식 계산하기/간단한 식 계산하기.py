@@ -1,8 +1,8 @@
 def solution(binomial):
-    cal = binomial.split()
-    if cal[1] == '+':
-        return int(cal[0]) + int(cal[-1])
-    elif cal[1] == '-':
-        return int(cal[0]) - int(cal[-1])
-    elif cal[1] == '*':
-        return int(cal[0]) * int(cal[-1])
+    a, op, b = binomial.split()
+    if op == '+':
+        return int(a) + int(b)
+    elif op == '-':
+        return int(a) - int(b)
+    elif op == '*':
+        return int(a) * int(b)
