@@ -1,5 +1,3 @@
-from collections import deque
-
 # 깊이 우선 탐색
 def DFS(v):
     visited[v] = True
@@ -8,11 +6,12 @@ def DFS(v):
         if not visited[i]:
             DFS(i)
 
+# 너비 우선 탐색
 def BFS(v):
-    queue = deque([v])
+    queue = [v]
     visited[v] = True
     while queue:
-        v = queue.popleft()
+        v = queue.pop(0)
         print(v, end=' ')
         for i in graph[v]:
             if not visited[i]:
