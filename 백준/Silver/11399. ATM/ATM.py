@@ -1,10 +1,8 @@
-import sys
-input = sys.stdin.readline
 n = int(input())
-line = list(map(int, input().split()))
-line.sort()
+time = sorted(list(map(int, input().split())))
+sum = 0
 
 for i in range(n):
-    line[i] *= (n-i)
+    sum += (time[i] * (n-i))
 
-print(sum(line))
+print(sum)
