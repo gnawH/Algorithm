@@ -1,10 +1,14 @@
 def solution(participant, completion):
-    hash = {}
+
+    player = {}
+    
     for name in participant:
-        hash[name] = hash.get(name, 0) + 1
+        player[name] = player.get(name, 0) + 1
+        
     for name in completion:
-        if hash[name] > 0:
-            hash[name] -= 1
-    for k, v in hash.items():
+        if player[name] > 0:
+            player[name] -= 1
+            
+    for k, v in player.items():
         if v > 0:
             return k
