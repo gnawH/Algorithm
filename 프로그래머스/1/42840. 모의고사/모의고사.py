@@ -1,5 +1,5 @@
 def solution(answers):
-    answer = []
+    top_scores = []
     # 점수
     score1, score2, score3 = 0, 0, 0
     # 규칙
@@ -10,16 +10,16 @@ def solution(answers):
     third = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] * (10000 // 10)
     # 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, ...
     
-    for i in range(len(answers)):
-        if answers[i] == first[i]:
+    for index, answer in enumerate(answers):
+        if answer == first[index]:
             score1 += 1
-        if answers[i] == second[i]:
+        if answer == second[index]:
             score2 += 1
-        if answers[i] == third[i]:
+        if answer == third[index]:
             score3 += 1
             
     scores = [score1, score2, score3]
-    for i in range(3):
-        if scores[i] == max(scores):
-            answer.append(i+1)
-    return answer
+    for idx, score in enumerate(scores):
+        if score == max(scores):
+            top_scores.append(idx+1)
+    return top_scores
