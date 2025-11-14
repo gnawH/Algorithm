@@ -1,29 +1,26 @@
 from itertools import permutations
 
 def solution(numbers):
-    result = 0
-    num = [number for number in numbers]
-    per = []
+    # 1. 문자열을 한자리 숫자로 분할
+    number = [num for num in numbers]
     
-    for count in range(1, len(num)+1):
-        per += list(permutations(num, count))
+    # 2. 조합할 수 있는 모든 경우의 수 찾기
+    numbers_permutaions = []
+    
+    for i in range(1, len(number)+1):
+        numbers_permutaions += list(permutations(number, i))
         
-    per_num = set(int(''.join(p)) for p in per)
-    result += prime_number(per_num)
-    return result
+    permutations_set = set(int(''.join(num)) for num in numbers_permutaions)
     
-    
-def prime_number(per_num):
-    result = 0
-    for num in per_num:
-        count = 0
+    # 3. 소수 판별
+    count = 0
+    for num in permutations_set:
+        isPrime = False
         if num >= 2:
             for i in range(2, int(num**0.5)+1):
                 if num % i == 0:
-                    count += 1
+                    isPrime = True
                     break
-            if count == 0:
-                result += 1
-                
-    return result
-            
+            if isPrime == False:
+                count += 1
+    return count
