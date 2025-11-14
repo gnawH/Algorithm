@@ -1,12 +1,16 @@
-n, m = map(int, input().split())
-card = list(map(int, input().split()))
-result = []
+from itertools import combinations
 
-for i in range(0, len(card)):
-    for j in range(1, len(card)):
-        for k in range(0, len(card)):
-            if card[i] < card[j] and card[j] < card[k]:
-                if card[i]+card[j]+card[k] <= m:
-                    result.append(card[i]+card[j]+card[k])
-            
-print(max(result))
+N, M = map(int, input().split())
+cards = list(map(int, input().split()))
+
+picks = combinations(cards, 3)
+sum_cards = [sum(pick) for pick in list(picks)]
+best = 0
+
+if M in sum_cards:
+    print(M)
+else:
+    for sum in sum_cards:
+        if sum < M and best < sum:
+            best = sum
+    print(best)
