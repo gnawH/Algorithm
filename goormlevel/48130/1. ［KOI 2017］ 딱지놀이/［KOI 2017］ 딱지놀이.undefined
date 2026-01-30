@@ -1,0 +1,56 @@
+# 1. 별의 개수
+# 2. 동그라미의 개수
+# 3. 네모의 개수
+# 4. 세모의 개수
+N = int(input())
+
+for _ in range(N):
+	count_4 = 0
+	count_3 = 0
+	count_2 = 0
+	count_1 = 0
+	
+	A = list(map(int, input().split()))[1:]
+	B = list(map(int, input().split()))[1:]
+	
+	for num in A:
+		if num == 4:
+			count_4 += 1
+		elif num == 3:
+			count_3 += 1
+		elif num == 2:
+			count_2 += 1
+		elif num == 1:
+			count_1 += 1
+	
+	for num in B:
+		if num == 4:
+			count_4 -= 1
+		elif num == 3:
+			count_3 -= 1
+		elif num == 2:
+			count_2 -= 1
+		elif num == 1:
+			count_1 -= 1
+
+	if count_4 > 0:
+		print('A')
+	elif count_4 < 0:
+		print('B')
+	elif count_4 == 0:
+		if count_3 > 0:
+			print('A')
+		elif count_3 < 0:
+			print('B')
+		elif count_3 == 0:
+			if count_2 > 0:
+				print('A')
+			elif count_2 < 0:
+				print('B')
+			elif count_2 == 0:
+				if count_1 > 0:
+					print('A')
+				elif count_1 < 0:
+					print('B')
+				elif count_1 == 0:
+					print('D')
