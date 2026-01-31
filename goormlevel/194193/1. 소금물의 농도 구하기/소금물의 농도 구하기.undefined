@@ -1,0 +1,6 @@
+import math
+N, M = map(int, input().split())
+
+result = (100 * (7 * N / 100)) / (N + M)
+result = math.floor(result*100) / 100
+print(f"{result:.2f}")
