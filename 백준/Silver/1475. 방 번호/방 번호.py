@@ -1,28 +1,29 @@
 import sys
 
+
 def sys_input() -> str:
     return sys.stdin.readline().rstrip()
 
 
-def solve(N: str) -> int:
-    number_set = [0] * 10
+def solve(n: str) -> int:
+    number_list = [0] * 10    # 0 ~ 9
 
-    for num in N:
-        number_set[int(num)] += 1
+    for num in n:
+        number_list[int(num)] += 1
 
-    duplicated_cnt = number_set[6] + number_set[9]
+    duplicated_cnt = number_list[6] + number_list[9]
 
-    if (duplicated_cnt) % 2 == 0:
-        number_set[6], number_set[9] = duplicated_cnt//2, duplicated_cnt//2
+    if duplicated_cnt % 2 == 0:
+        number_list[6], number_list[9] = duplicated_cnt // 2, duplicated_cnt // 2
     else:
-        number_set[6], number_set[9] = (duplicated_cnt//2)+1, (duplicated_cnt//2)+1
+        number_list[6], number_list[9] = (duplicated_cnt // 2) + 1, (duplicated_cnt // 2) + 1
 
-    return max(number_set)
+    return max(number_list)
 
 
 def main() -> None:
-    N = sys_input()
-    answer = solve(N)
+    n = sys_input()
+    answer = solve(n)
     print(answer)
 
 
