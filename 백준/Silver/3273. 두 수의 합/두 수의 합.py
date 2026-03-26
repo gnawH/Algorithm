@@ -6,15 +6,22 @@ def sys_input() -> str:
 
 
 def solve(n: int, a: list[int], x: int) -> int:
-    tmp_space = set()
-    count = 0
+    a.sort()
 
-    for a_num in a:
-        if a_num in tmp_space:
-            tmp_space.remove(a_num)
+    count = 0
+    left = 0
+    right = n-1
+
+    while (left < right):
+        combination = a[left] + a[right]
+        if combination == x:
             count += 1
+            left += 1
+            right -= 1
+        elif combination > x:
+            right -= 1
         else:
-            tmp_space.add(x - a_num)
+            left += 1
 
     return count
 
