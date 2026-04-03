@@ -10,4 +10,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0181-employees-earning-more-than-their-managers](https://github.com/gnawH/Algorithm/tree/main/LeetCode/Easy/0181-employees-earning-more-than-their-managers/) | Easy |
 | [0182-duplicate-emails](https://github.com/gnawH/Algorithm/tree/main/LeetCode/Easy/0182-duplicate-emails/) | Easy |
 | [0183-customers-who-never-order](https://github.com/gnawH/Algorithm/tree/main/LeetCode/Easy/0183-customers-who-never-order/) | Easy |
+| [0185-department-top-three-salaries](https://github.com/gnawH/Algorithm/tree/main/LeetCode/Hard/0185-department-top-three-salaries/) | Hard |
 <!---LeetCode Topics End-->
